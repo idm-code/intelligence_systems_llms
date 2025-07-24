@@ -1,28 +1,56 @@
-# Zero-Shot Agent + Tool con LLM
+# Sistemas Inteligentes con LLM y Herramientas
 
-Este proyecto demuestra cómo crear un agente inteligente capaz de responder preguntas utilizando un modelo de lenguaje (LLM) y herramientas personalizadas. El agente utiliza la librería LangChain y OpenAI para procesar preguntas y, cuando es necesario, consultar una herramienta personalizada para obtener información específica.
+Este proyecto muestra cómo crear agentes inteligentes que responden preguntas usando modelos de lenguaje (LLM) y herramientas personalizadas, empleando LangChain, LangChain OpenAI y LangChain Ollama. Incluye ejemplos tanto con modelos en la nube (OpenAI) como con modelos locales (Ollama).
 
 ## Estructura del proyecto
 
 - `.env`: Contiene la clave de API de OpenAI.
 - `.gitignore`: Excluye archivos sensibles como `.env`.
-- `1. Zero-Shot Agent + Tool/main.py`: Código principal del agente y la herramienta personalizada.
+- `1. Zero-Shot Agent + Tool/main.py`: Agente con OpenAI y herramienta personalizada para consulta de capitales.
+- `2. LLM Basic Agent Langchain/main.py`: Agente con modelo local (Ollama) y herramienta calculadora básica.
 
 ## Descripción
 
-El agente implementado es de tipo "Zero-Shot React Description". Se le proporciona una herramienta llamada `CapitalLookup`, que permite consultar la capital de ciertos países. Si el agente detecta que la pregunta requiere esta información, utiliza la herramienta para responder.
+### 1. Zero-Shot Agent + Tool (OpenAI)
+Agente de tipo "Zero-Shot React Description" que utiliza una herramienta llamada `CapitalLookup` para consultar la capital de ciertos países. El agente decide cuándo usar la herramienta para responder preguntas geográficas.
 
-### Ejemplo de uso
+**Ejemplo de uso:**
+```python
+python "1. Zero-Shot Agent + Tool/main.py"
+```
+Pregunta: ¿Cuál es la capital de Alemania?  
+Respuesta esperada: Berlín
 
-Al ejecutar el script principal, el agente responde a la pregunta:
+### 2. LLM Basic Agent Langchain (Ollama)
+Agente que utiliza un modelo local (ejemplo: gemma3:4b) y una herramienta calculadora para realizar operaciones matemáticas simples.
+
+**Ejemplo de uso:**
+```python
+python "2. LLM Basic Agent Langchain/main.py"
+```
+Pregunta: ¿Cuánto es 24 * 3 + 15?  
+Respuesta esperada: 87
 
 ## Requisitos
 
 - Python 3.8+
-- Paquetes: `langchain`, `langchain_openai`, `python-dotenv`
+- Paquetes: `langchain`, `langchain_openai`, `langchain_ollama`, `langchain_community`, `python-dotenv`
 
 Instalación de dependencias:
 
 ```sh
-pip install langchain langchain_openai python-dotenv
+pip install langchain langchain_openai langchain_ollama langchain_community python-dotenv
 ```
+
+## Notas
+
+- Para modelos OpenAI, coloca tu clave en `.env`:
+  ```
+  OPENAI_API_KEY=tu_clave_aqui
+  ```
+- Para modelos Ollama, asegúrate de tener Ollama instalado y el modelo descargado.
+- LangChain recomienda migrar agentes nuevos a LangGraph para mayor flexibilidad y funcionalidades avanzadas.
+
+## Créditos
+
+Desarrollado como ejemplo para sistemas inteligentes con LLM y herramientas personalizadas usando LangChain, OpenAI
