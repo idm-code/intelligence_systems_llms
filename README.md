@@ -8,6 +8,7 @@ Este proyecto muestra cómo crear agentes inteligentes que responden preguntas u
 - `.gitignore`: Excluye archivos sensibles como `.env`.
 - `1. Zero-Shot Agent + Tool/main.py`: Agente con OpenAI y herramienta personalizada para consulta de capitales.
 - `2. LLM Basic Agent Langchain/main.py`: Agente con modelo local (Ollama) y herramienta calculadora básica.
+- `3. Multitool Agent Langchain/main.py`: Agente con modelo local y múltiples herramientas (calculadora, búsqueda y lectura de archivos).
 
 ## Descripción
 
@@ -31,6 +32,21 @@ python "2. LLM Basic Agent Langchain/main.py"
 Pregunta: ¿Cuánto es 24 * 3 + 15?  
 Respuesta esperada: 87
 
+### 3. Multitool Agent Langchain (Ollama)
+Agente que utiliza un modelo local (ejemplo: gemma3:4b) y varias herramientas:
+- **Calculadora:** Realiza sumas simples, por ejemplo: `5 + 12`.
+- **Buscar archivos:** Busca archivos por patrón en un directorio, por ejemplo: `*.txt, .` (busca archivos `.txt` en el directorio actual).
+- **Leer archivo:** Lee el contenido de un archivo de texto dado su path.
+
+**Ejemplo de uso:**
+```python
+python "3. Multitool Agent Langchain/main.py"
+```
+Preguntas de ejemplo:
+- ¿Cuánto es 5 + 12?
+- Busca archivos '.txt' en el directorio actual
+- Lee el contenido de los archivos '*.txt'
+
 ## Requisitos
 
 - Python 3.8+
@@ -53,4 +69,4 @@ pip install langchain langchain_openai langchain_ollama langchain_community pyth
 
 ## Créditos
 
-Desarrollado como ejemplo para sistemas inteligentes con LLM y herramientas personalizadas usando LangChain, OpenAI
+Desarrollado como ejemplo para sistemas inteligentes con LLM y herramientas personalizadas usando LangChain, OpenAI y Ollama.
