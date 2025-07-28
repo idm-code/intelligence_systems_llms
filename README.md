@@ -9,6 +9,7 @@ Este proyecto muestra cómo crear agentes inteligentes que responden preguntas u
 - `1. Zero-Shot Agent + Tool/main.py`: Agente con OpenAI y herramienta personalizada para consulta de capitales.
 - `2. LLM Basic Agent Langchain/main.py`: Agente con modelo local (Ollama) y herramienta calculadora básica.
 - `3. Multitool Agent Langchain/main.py`: Agente con modelo local y múltiples herramientas (calculadora, búsqueda y lectura de archivos).
+- `4. Conversation Memory/main.py`: Agente con modelo local, múltiples herramientas y memoria conversacional.
 
 ## Descripción
 
@@ -46,6 +47,27 @@ Preguntas de ejemplo:
 - ¿Cuánto es 5 + 12?
 - Busca archivos '.txt' en el directorio actual
 - Lee el contenido de los archivos '*.txt'
+
+### 4. Conversation Memory (Ollama)
+Agente que utiliza un modelo local (ejemplo: gemma3:4b), varias herramientas y memoria conversacional para mantener el contexto entre preguntas y respuestas.
+
+Herramientas disponibles:
+- **Calculadora:** Realiza sumas simples, por ejemplo: `8 + 7`.
+- **Buscar archivos:** Busca archivos por patrón en un directorio, por ejemplo: `*.txt, .`.
+- **Leer archivo:** Lee el contenido de un archivo de texto dado su path.
+
+La memoria permite que el agente recuerde interacciones previas y pueda responder preguntas sobre el historial de la conversación.
+
+**Ejemplo de uso:**
+```python
+python "4. Conversation Memory/main.py"
+```
+Preguntas de ejemplo:
+- Hola, ¿quién eres?
+- ¿Cuánto es 8 + 7?
+- ¿Recuerdas lo que acabamos de hacer?
+- Busca archivos '.txt' en el directorio actual y lee el contenido del primero.
+- Dime punto por punto todo lo que recuerdas
 
 ## Requisitos
 

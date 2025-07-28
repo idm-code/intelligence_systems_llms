@@ -1,0 +1,1 @@
+Este fichero es un ejemplo para probar la lectura de archivos.
