@@ -10,6 +10,7 @@ Este proyecto muestra cómo crear agentes inteligentes que responden preguntas u
 - `2. LLM Basic Agent Langchain/main.py`: Agente con modelo local (Ollama) y herramienta calculadora básica.
 - `3. Multitool Agent Langchain/main.py`: Agente con modelo local y múltiples herramientas (calculadora, búsqueda y lectura de archivos).
 - `4. Conversation Memory/main.py`: Agente con modelo local, múltiples herramientas y memoria conversacional.
+- `5. Database tool/main.py`: Agente con modelo local y herramienta para consultas SQL sobre una base de datos SQLite.
 
 ## Descripción
 
@@ -69,6 +70,17 @@ Preguntas de ejemplo:
 - Busca archivos '.txt' en el directorio actual y lee el contenido del primero.
 - Dime punto por punto todo lo que recuerdas
 
+### 5. Database tool (Ollama + SQLite)
+Agente que utiliza un modelo local (ejemplo: gemma3:4b) y una herramienta para ejecutar consultas SQL sobre una base de datos SQLite local (`data.db`). Permite consultar la tabla `usuarios` con los campos `id` y `nombre`.
+
+**Ejemplo de uso:**
+```python
+python "5. Database tool/main.py"
+```
+Preguntas de ejemplo:
+- ¿Cuáles son los nombres de todos los usuarios en la base de datos?
+- Haz una consulta SQL para mostrar el campo 'nombre' de la tabla 'usuarios'.
+
 ## Requisitos
 
 - Python 3.8+
@@ -87,6 +99,7 @@ pip install langchain langchain_openai langchain_ollama langchain_community pyth
   OPENAI_API_KEY=tu_clave_aqui
   ```
 - Para modelos Ollama, asegúrate de tener Ollama instalado y el modelo descargado.
+- Para el ejemplo de base de datos, ejecuta primero `crear_db.py` en el directorio `5. Database tool/` para crear y poblar la base de datos.
 - LangChain recomienda migrar agentes nuevos a LangGraph para mayor flexibilidad y funcionalidades avanzadas.
 
 ## Créditos
