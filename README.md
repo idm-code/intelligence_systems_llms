@@ -11,6 +11,7 @@ Este proyecto muestra cómo crear agentes inteligentes que responden preguntas u
 - `3. Multitool Agent Langchain/main.py`: Agente con modelo local y múltiples herramientas (calculadora, búsqueda y lectura de archivos).
 - `4. Conversation Memory/main.py`: Agente con modelo local, múltiples herramientas y memoria conversacional.
 - `5. Database tool/main.py`: Agente con modelo local y herramienta para consultas SQL sobre una base de datos SQLite.
+- `6. Data Analysis Tool/main.py`: Agente con modelo GPT-4 (OpenAI) para análisis y visualización de datos en CSV.
 
 ## Descripción
 
@@ -81,15 +82,31 @@ Preguntas de ejemplo:
 - ¿Cuáles son los nombres de todos los usuarios en la base de datos?
 - Haz una consulta SQL para mostrar el campo 'nombre' de la tabla 'usuarios'.
 
+### 6. Data Analysis Tool (OpenAI GPT-4 + CSV)
+Agente que utiliza GPT-4 (OpenAI) y una herramienta para ejecutar código Python sobre el archivo `ventas.csv` y generar análisis o visualizaciones automáticas.
+
+Herramientas disponibles:
+- **Análisis de datos:** Ejecuta instrucciones Python sobre el DataFrame `df` cargado desde `ventas.csv`. Las columnas disponibles son:  
+  `'ID_Venta', 'Fecha', 'Cliente', 'Producto', 'Categoría', 'Cantidad', 'Precio_Unitario', 'Total', 'Medio_Pago', 'País'`.
+
+**Ejemplo de uso:**
+```python
+python "6. Data Analysis Tool/main.py"
+```
+Preguntas de ejemplo:
+- Haz un gráfico de barras con el total de ventas por país y guárdalo como 'output.png'
+- ¿Cuál es el país con mayor número de ventas?
+- ¿Cuántas ventas se hicieron por cada medio de pago?
+
 ## Requisitos
 
 - Python 3.8+
-- Paquetes: `langchain`, `langchain_openai`, `langchain_ollama`, `langchain_community`, `python-dotenv`
+- Paquetes: `langchain`, `langchain_openai`, `langchain_ollama`, `langchain_community`, `python-dotenv`, `pandas`, `matplotlib`
 
 Instalación de dependencias:
 
 ```sh
-pip install langchain langchain_openai langchain_ollama langchain_community python-dotenv
+pip install langchain langchain_openai langchain_ollama langchain_community python-dotenv pandas matplotlib
 ```
 
 ## Notas
@@ -100,6 +117,7 @@ pip install langchain langchain_openai langchain_ollama langchain_community pyth
   ```
 - Para modelos Ollama, asegúrate de tener Ollama instalado y el modelo descargado.
 - Para el ejemplo de base de datos, ejecuta primero `crear_db.py` en el directorio `5. Database tool/` para crear y poblar la base de datos.
+- Para el análisis de datos, asegúrate de tener el archivo `ventas.csv` en el directorio correspondiente.
 - LangChain recomienda migrar agentes nuevos a LangGraph para mayor flexibilidad y funcionalidades avanzadas.
 
 ## Créditos

@@ -1,0 +1,21 @@
+ID_Venta,Fecha,Cliente,Producto,Categoría,Cantidad,Precio_Unitario,Total,Medio_Pago,País
+1001,2025-07-01,Ana García,Smartphone Galaxy A54,Smartphones,2,299.99,599.98,Tarjeta de crédito,España
+1002,2025-07-01,Luis Pérez,Portátil HP 15",Portátiles,1,749.50,749.50,Transferencia,España
+1003,2025-07-02,Clara Gómez,Auriculares Sony WH-1000XM4,Audio,1,199.99,199.99,PayPal,México
+1004,2025-07-02,David Ruiz,Monitor LG 27",Monitores,2,189.00,378.00,Tarjeta de débito,Colombia
+1005,2025-07-03,María López,Teclado mecánico Logitech,Accesorios,3,89.99,269.97,PayPal,Chile
+1006,2025-07-04,Jorge Martínez,Tablet Samsung Tab S6,Tablets,1,449.00,449.00,Tarjeta de crédito,España
+1007,2025-07-04,Lucía Fernández,Smartwatch Amazfit GTS 4,Smartwatches,2,129.95,259.90,Transferencia,Argentina
+1008,2025-07-05,Pedro Alonso,Disco SSD 1TB Kingston,Almacenamiento,1,119.00,119.00,Tarjeta de débito,Perú
+1009,2025-07-05,Sofía Ramírez,Cámara GoPro Hero 11,Cámaras,1,399.95,399.95,Tarjeta de crédito,México
+1010,2025-07-06,Carlos Ortega,Impresora HP DeskJet 2720,Impresoras,1,59.99,59.99,PayPal,Ecuador
+1011,2025-07-06,Elena Navarro,Laptop Lenovo IdeaPad 3,Portátiles,1,639.00,639.00,Tarjeta de débito,España
+1012,2025-07-07,Miguel Torres,Mouse inalámbrico Logitech M330,Accesorios,2,24.99,49.98,Tarjeta de crédito,Chile
+1013,2025-07-07,Raúl Sánchez,Altavoz JBL Flip 6,Audio,1,109.00,109.00,Transferencia,México
+1014,2025-07-08,Sara Vidal,Webcam Logitech C920,Accesorios,1,89.90,89.90,PayPal,Colombia
+1015,2025-07-08,Tomás Ibáñez,Monitor curvo Samsung 32",Monitores,1,249.00,249.00,Tarjeta de crédito,España
+1016,2025-07-09,Julia Ríos,Lector Kindle Paperwhite,E-Readers,1,139.00,139.00,Transferencia,Perú
+1017,2025-07-09,Alberto Lozano,Router Wi-Fi 6 TP-Link,Redes,2,79.90,159.80,PayPal,Argentina
+1018,2025-07-10,Teresa Méndez,Disco duro externo 2TB WD,Almacenamiento,1,89.95,89.95,Tarjeta de débito,Ecuador
+1019,2025-07-10,Francisco Navas,Smartphone iPhone 13,Smartphones,1,849.00,849.00,Tarjeta de crédito,México
+1020,2025-07-10,Isabel Reyes,Cámara Canon EOS M50,Cámaras,1,649.00,649.00,Transferencia,España
