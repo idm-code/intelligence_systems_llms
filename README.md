@@ -12,6 +12,7 @@ Este proyecto muestra cómo crear agentes inteligentes que responden preguntas u
 - `4. Conversation Memory/main.py`: Agente con modelo local, múltiples herramientas y memoria conversacional.
 - `5. Database tool/main.py`: Agente con modelo local y herramienta para consultas SQL sobre una base de datos SQLite.
 - `6. Data Analysis Tool/main.py`: Agente con modelo GPT-4 (OpenAI) para análisis y visualización de datos en CSV.
+- `7. Multimodal Agent/main.py`: Agente con modelo local y herramientas para trabajar con datos multimodales: archivos PDF, imágenes y CSV.
 
 ## Descripción
 
@@ -98,15 +99,34 @@ Preguntas de ejemplo:
 - ¿Cuál es el país con mayor número de ventas?
 - ¿Cuántas ventas se hicieron por cada medio de pago?
 
+### 7. Multimodal Agent (Ollama + PDF/Imagen/CSV)
+Agente que utiliza un modelo local (ejemplo: gemma3:4b) y herramientas para trabajar con datos multimodales: archivos PDF, imágenes y CSV.
+
+Herramientas disponibles:
+- **CSVAnalyzer:** Analiza el archivo `ventas.csv` usando instrucciones Python, por ejemplo: `df.groupby("País")["Total"].sum()`.
+- **PDFReader:** Extrae texto del archivo PDF `documento.pdf`.
+- **ImageOCR:** Extrae texto de la imagen `factura.webp` usando OCR.
+
+**Ejemplo de uso:**
+```python
+python "7. Multimodal Agent/main.py"
+```
+Preguntas de ejemplo:
+- ¿Cuál es el total de ventas por país en ventas.csv?
+- ¿Qué texto aparece en el PDF documento.pdf?
+- ¿Qué texto aparece en la imagen factura.webp?
+
+---
+
 ## Requisitos
 
 - Python 3.8+
-- Paquetes: `langchain`, `langchain_openai`, `langchain_ollama`, `langchain_community`, `python-dotenv`, `pandas`, `matplotlib`
+- Paquetes: `langchain`, `langchain_openai`, `langchain_ollama`, `langchain_community`, `python-dotenv`, `pandas`, `matplotlib`, `PyMuPDF`, `pytesseract`, `Pillow`
 
 Instalación de dependencias:
 
 ```sh
-pip install langchain langchain_openai langchain_ollama langchain_community python-dotenv pandas matplotlib
+pip install langchain langchain_openai langchain_ollama langchain_community python-dotenv pandas matplotlib PyMuPDF pytesseract Pillow
 ```
 
 ## Notas
@@ -118,6 +138,7 @@ pip install langchain langchain_openai langchain_ollama langchain_community pyth
 - Para modelos Ollama, asegúrate de tener Ollama instalado y el modelo descargado.
 - Para el ejemplo de base de datos, ejecuta primero `crear_db.py` en el directorio `5. Database tool/` para crear y poblar la base de datos.
 - Para el análisis de datos, asegúrate de tener el archivo `ventas.csv` en el directorio correspondiente.
+- Para el agente multimodal, asegúrate de tener los archivos `documento.pdf`, `factura.webp` y `ventas.csv` en el directorio `7. Multimodal Agent/`.
 - LangChain recomienda migrar agentes nuevos a LangGraph para mayor flexibilidad y funcionalidades avanzadas.
 
 ## Créditos
